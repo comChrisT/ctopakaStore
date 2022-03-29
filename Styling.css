@@ -1,0 +1,311 @@
+
+body
+{
+    margin: 0;
+    font-family: sans-serif;
+    min-height: 100vh;
+}
+
+.bar {
+    background-color: #BE1622;
+    overflow: auto ;
+    text-align: end;
+    width: 100%;
+    height: auto;
+
+}
+
+.bar a {
+
+    color: #f2f2f2;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin-top: 0;
+}
+
+#heaedertitle
+{
+    color: #f2f2f2;
+    margin-left: 430px ;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: 20px;
+    font-family: sans-serif;
+    font-size: 23px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#uclanlogo{
+
+    width: 390px;
+    float: left;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+    /*background-color: yellow;*/
+
+}
+
+
+
+/* ham menu: */
+#hamMenu
+{
+
+    max-width:7%;
+
+    margin-right: 10px;
+    margin-top: 0;
+    position: fixed;
+    height:auto;
+    right: 0;
+    top: 10px;
+
+}
+
+#hamMenuChoices
+{
+
+    background-color:darkgrey ;
+    display: none;
+    text-align: left;
+    width: 800px;
+    float:left;
+}
+
+#hamMenuChoices:hover
+{
+
+    background-color: #ddd;
+
+
+}
+
+#hamMenuChoices.a
+{
+    color: #f2f2f2;
+
+}
+
+#footer {
+
+
+
+    text-align: center;
+    color: #f2f2f2;
+    font-size: 20px;
+
+
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 212px;
+    background-color: #34516C;
+
+
+
+}
+
+
+
+#footer ul{
+    list-style:none;
+    text-align: center;
+
+
+}
+
+#group1Footer{float: left;
+    margin-left: 330px;
+    top: 0;
+    bottom: 0;;
+}
+#group2Footer{float: left;top: 0;
+    bottom: 0;}
+#group3Footer{float: left;top: 0;
+    bottom: 0;}
+
+
+
+#links{
+    font-weight: bolder;
+    font-size: 20px;
+}
+#contact{
+    font-weight: bolder;
+    font-size: 20px;
+}
+#location{
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+
+/*for index page video title */
+
+
+
+#firstVideo{
+    width: 854px;
+    height:480px;
+}
+
+#firstVideoDiv{
+    color: #F2BE1A;
+    text-align: center;
+    font-size: 14px;
+}
+
+#secondVideo{
+    width: 854px;
+    height:480px;
+
+}
+
+#secVideoDiv{
+    color: #F2BE1A;
+    text-align: center;
+    font-size: 14px;
+}
+
+#mainTitle{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #34516C;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#firstParagraph{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40em;
+}
+
+#forProduct{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 30em;
+    background-color: #C7CBDA;
+    text-align: center;
+/*
+    padding-top: 0px;
+    padding-right: 9.8px;
+    padding-bottom: 19.6px;
+    padding-left: 9.8px
+
+ */
+}
+
+#cartItem{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 40em;
+
+    text-align: center;
+    border-style: solid;
+
+}
+
+
+
+#product{
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 40em;
+
+    text-align: center;
+    border-style: solid;
+
+}
+
+#goTopButton{
+    color: white ;
+    background-color:#34516C;
+    width:100px;
+    height:100px;
+    position:fixed;
+    bottom:250px;
+    left:10px;
+    border-radius: 50px;
+    border-width: thick;
+    border: #BE1622;
+    font-weight: bold;
+    font-size: large;
+
+}
+
+#goBackButton{
+    color: white ;
+    background-color:#BE1622 ;
+    width:100px;
+    height:100px;
+    position:fixed;
+    bottom:250px;
+    left:30px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: large;
+}
+#emptyCart{
+    color: white ;
+    background-color:#34516C;
+    width:100px;
+    height:100px;
+    position:fixed;
+    bottom:250px;
+    right:30px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: large;
+
+}
+
+#cartTitle{
+
+    text-align: center;
+}
+
+#productsTitle{
+    text-align: center;
+}
+
+#NavProducts{
+    text-align: center;
+}
+
+#NavProducts a{
+    font-weight: bold;
+}
+
+#NavProducts button{
+    display: inline-block;
+    text-decoration: none;
+    background-color: #007FB0;
+    border: none;
+    color: white;
+}
+
+#CartDescr{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
