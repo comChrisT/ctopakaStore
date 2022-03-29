@@ -1143,7 +1143,7 @@ function goToJumpers(){
 function adjustFooter(name){
     switch(name) {
         case 1:
-            document.getElementById("footer").style.marginTop="20px";           //for adjusting the margin for index.html
+            document.getElementById("footer").style.marginTop="20px";           //for adjusting the margin for index.php
             break;
         case 2:
             document.getElementById("footer").style.marginTop="100px";          //for adjusting the margin for cart.html
