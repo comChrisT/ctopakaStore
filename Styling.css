@@ -171,6 +171,15 @@ body
     font-size: 14px;
 }
 
+#offersTitle{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #34516C;
+    width: 100%;
+    margin-top: 10px;
+}
+
 #mainTitle{
     text-align: center;
     font-size: 40px;

@@ -14,9 +14,11 @@
             <img id="uclanlogo" src="uclan logo.png"   alt="uclan logo"/>
 
             <ul id="topElements">
-                <a href="index.html">Home</a>
+                <a href="index.php">Home</a>
                 <a href="products.html">Products</a>
                 <a href="cart.html">Cart</a>
+                <a href="signup.php">Sign Up</a>
+
             </ul>
 
             <p id="heaedertitle">Student Shop</p>
@@ -29,6 +31,8 @@
             </div>
 
     </header>
+
+
     <div id="mainBody">
         <div class="offers">
 <?php
@@ -51,14 +55,39 @@ if (mysqli_connect_errno())
 $query = "SELECT *
           FROM tbl_offers;";
 $result = $connection -> query($query);
-    echo "List of all offers:";
+echo "<p
+    style='text-align: center;
+     font-size:2vw;
+    font-weight: bold;
+    color: #34516C;
+    width: 100%;
+    text-decoration: underline;
+    '>"."Offers"."</p>";
+
+
     echo "<ol>";    //defines the ordered list
 
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC))    //fethces the array
     {
 
 
-        echo "<li>". $row["offer_title"] ."</li>";
+        echo "<h1 style='margin-left: auto;
+             margin-right: auto;
+             margin-top: 10px;
+             width: 30em;
+             background-color: 	#808080;
+             color: #F2BE1A;
+             font-size:2vw;
+             text-align: center;'>". $row["offer_title"]."</h1>";  //presents all the offer titles
+              echo "<h1 style='margin-left: auto;
+                          margin-right: auto;
+                          margin-top: 10px;
+                          width: 30em;
+                          color: black;
+                          font-size:1vw;
+                          text-align: center;'>". $row["offer_dec"] ."</h1>";  //presents all the offer titles
+
+
 
 
     }
@@ -66,6 +95,7 @@ $result = $connection -> query($query);
 
 
 ?>
+<hr>
         </div>
         <p id="mainTitle">Where opportunity creates success</p>
         <p id="firstParagraph">Every UCLan Cyprus student becomes automatically a member of the Student Union. <br>UCLan Students’ Union exists improve the life of students.<br>Find more information about the university below.</p>
