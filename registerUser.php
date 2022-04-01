@@ -58,11 +58,13 @@
       $fullName = mysqli_real_escape_string($connection, $_POST['fullName']);           //retrieving the full name from the form using post
       $email = mysqli_real_escape_string($connection, $_POST['email']);                 //retrieving the email from the form using post
       $passwordBefore = mysqli_real_escape_string($connection, $_POST['password1']);    //retrieving the password from the form using post
+      $address = mysqli_real_escape_string($connection, $_POST['address']);                 //retrieving the email from the form using post
+
 
       $passwordAfter = sha1($passwordBefore);   //encrypting the password using sha1
 
-        	$query = "INSERT INTO tbl_users (user_full_name, user_email, user_pass)
-        			  VALUES('$fullName', '$email', '$passwordAfter')";
+        	$query = "INSERT INTO tbl_users (user_full_name, user_email, user_pass, user_address)
+        			  VALUES('$fullName', '$email', '$passwordAfter', '$address')";
         	mysqli_query($connection, $query);  //sending the query to the database
 
 

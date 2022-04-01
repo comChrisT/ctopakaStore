@@ -1149,7 +1149,7 @@ function adjustFooter(name){
             document.getElementById("footer").style.marginTop="100px";          //for adjusting the margin for cart.html
             break;
         case 3:
-            document.getElementById("footer").style.marginTop="0px";            //for adjusting the margin for products.html
+            document.getElementById("footer").style.marginTop="0px";            //for adjusting the margin for products.php
             break;
         case 4:
             document.getElementById("footer").style.marginTop="290px";          //for adjusting the margin for item.html

@@ -1,19 +1,50 @@
 .container {
-    background: #15141A;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: auto;
-    height: 780px;
+    height: 1450px;
     width: 400px;
-    box-shadow: 10px 5px 5px red;
     opacity: 0.9;
+    background-color: indianred;
+    border-radius: 15px 50px;
+}
+
+.form-item{
+    display: block;
+    text-align: center;
+}
+
+.buttonsForm
+{
+    width: 40%;
+    margin-left: 32%;
+    margin-right: 30%;
+    text-align: center;
+}
+
+.buttonsForm button {
+    background-color: #c72e2e;
+    color: white;
+    padding: 15px 32px;
+    border: none;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    cursor: pointer;
+
+
+}
+
+.buttonsForm button:hover {
+    box-shadow: 0 12px 16px 0 rgba(35, 34, 34, 0.24),0 17px 50px 0 rgb(17, 16, 16);
 }
 
 body
 {
-    color: white;
-    font-size:20px;
+    color: black;
+    font-size:30px;
 }
 
 @media only screen and (max-width: 600px)
@@ -24,9 +55,17 @@ body
 
     .container {
 
-        height: 980px;
+        height: 1650px;
         width: 450px;
 
+    }
+
+    .buttonsForm
+    {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 30%;
+        text-align: center;
     }
 }
 
@@ -38,8 +77,8 @@ form {
 #passwordMessage
 {
     display: none;
-    background: #a47e7e;
-    color: white;
+    background: #fa5c5c;
+    color: black;
     position: relative;
 }
 
@@ -68,3 +107,16 @@ form {
     position: relative;
     content: "❌";
 }
+
+.form-item input {
+
+    border: 2px solid #000;
+    outline: none;
+    color: black;
+    border-radius: 10px;
+    padding: 15px;
+
+}
+
+
+

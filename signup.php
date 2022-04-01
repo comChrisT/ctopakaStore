@@ -34,40 +34,55 @@
 
     </header>
 
-
+<button id="goTopButton" onclick="GoTop()">Go top</button>
 <br>
     <div class="container">
-            <h2>Sign Up</h2>
-
-            <form method="post" action="registerUser.php">
-                <div class="form-item">
-                    <p>Full Name:</p>
-                        <input type="text" name="fullName" id="fullName" placeholder="e.g. John Smith" required>
-                    </div>
-
-                    <div class="form-item">
-                    <p>Email:</p>
-                        <input type="email" name="email" id="email" placeholder="e.g. example@gmail.com" required>
-                    </div>
-
-                    <div class="form-item">
-                    <p>Address:</p>
-                        <input type="text" name="address" id="address" placeholder="e.g. Saint George Street, N2" required>
-                    </div>
-
-                    <div class="form-item">
-                    <p>Password:</p>
-                        <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="password1" id="password1" placeholder="Enter password" required>
-                        <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="confirmPassword" id="confirmPassword" placeholder="Re-enter password" required>
-                        <p id="notMatch" style="display:none; color:red;font-size:15px;">Passwords do not match!</p>
+        <h2>Sign Up</h2>
+        <form method="post" action="registerUser.php">
+            <div class="form-item">
+                <p>Full Name:</p>
+                    <input type="text" name="fullName" id="fullName" placeholder="e.g. John Smith" required>
                 </div>
-<div id="passwordMessage">
-  <h3>Password must contain the following:</h3>
-  <p id="letters" class="invalid"><b>Lowercase Letter</b></p>
-  <p id="uppercase" class="invalid"><b>Capital Letter</b></p>
-  <p id="number" class="invalid"><b>A Number</b></p>
-  <p id="length" class="invalid"><b>At least 8 characters</b></p>
+
+                <div class="form-item">
+                <p>Email:</p>
+                    <input type="email" name="email" id="email" placeholder="e.g. example@gmail.com" required>
+                </div>
+
+                <div class="form-item">
+                <p>Address:</p>
+                    <input type="text" name="address" id="address" placeholder="e.g. Saint George Street, N2" required>
+                </div>
+
+                <div class="form-item">
+                <p>Password:</p>
+                    <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="password1" id="password1" placeholder="Enter password" required>
+                    <br>
+                    <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="confirmPassword" id="confirmPassword" placeholder="Re-enter password" required>
+                    <p id="notMatch" style="display:none; color:red;font-size:15px;">Passwords do not match!</p>
+            </div>
+      <div id="passwordMessage">
+      <h3>Password must contain the following:</h3>
+      <p id="letters" class="invalid"><b>Lowercase Letter</b></p>
+      <p id="uppercase" class="invalid"><b>Capital Letter</b></p>
+      <p id="number" class="invalid"><b>A Number</b></p>
+      <p id="length" class="invalid"><b>At least 8 characters</b></p>
 </div>
+<br>
+<div class="buttonsForm">
+    <button class="signup" type="submit" name="register_User">Sign Up</button>
+    <div class="options">
+    </div>
+</div>
+<br>
+    <a>Already have an account?</a> <a href="#"><br>Login here</a>
+</form>
+
+
+    </body>
+
+
+    </html>
 
 <script>
     var userInput = document.getElementById("password1");
@@ -153,20 +168,3 @@
 
 </script>
 
-<br>
-                <div class="buttonsForm">
-                    <button class="signup" type="submit" name="register_User">Sign Up</button>
-
-                    <div class="options">
-                    <br>
-                        Already have an account? <a href="#">Login here</a>
-                    </div>
-                </div>
-
-            </form>
-        </div>
-
-    </body>
-
-
-    </html>
