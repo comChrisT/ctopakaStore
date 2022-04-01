@@ -60,24 +60,27 @@
                     <br>
                     <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="confirmPassword" id="confirmPassword" placeholder="Re-enter password" required>
                     <p id="notMatch" style="display:none; color:red;font-size:15px;">Passwords do not match!</p>
+                </div>
+              <div id="passwordMessage">
+              <h3>Password must contain the following:</h3>
+              <p id="letters" class="invalid"><b>Lowercase Letter</b></p>
+              <p id="uppercase" class="invalid"><b>Capital Letter</b></p>
+              <p id="number" class="invalid"><b>A Number</b></p>
+              <p id="length" class="invalid"><b>At least 8 characters</b></p>
+              </div>
+            <br>
+            <div class="buttonsForm">
+                <button class="signup" type="submit" name="register_User">Sign Up</button>
+                <div class="options">
+                </div>
             </div>
-      <div id="passwordMessage">
-      <h3>Password must contain the following:</h3>
-      <p id="letters" class="invalid"><b>Lowercase Letter</b></p>
-      <p id="uppercase" class="invalid"><b>Capital Letter</b></p>
-      <p id="number" class="invalid"><b>A Number</b></p>
-      <p id="length" class="invalid"><b>At least 8 characters</b></p>
-</div>
-<br>
-<div class="buttonsForm">
-    <button class="signup" type="submit" name="register_User">Sign Up</button>
-    <div class="options">
-    </div>
-</div>
-<br>
-    <a>Already have an account?</a> <a href="#"><br>Login here</a>
-</form>
+            <br>
 
+
+    </form>
+    <!-- <a>Already have an account?</a> <a href="Login"><br>Login here</a> -->
+
+</div>
 
     </body>
 
