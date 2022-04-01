@@ -39,8 +39,8 @@
     <div class="container">
             <h2>Sign Up</h2>
 
-            <form action="">
-                <div class="form-item-username">
+            <form method="post" action="registerUser.php">
+                <div class="form-item">
                     <p>Full Name:</p>
                         <input type="text" name="fullName" id="fullName" placeholder="e.g. John Smith" required>
                     </div>
@@ -48,6 +48,11 @@
                     <div class="form-item">
                     <p>Email:</p>
                         <input type="email" name="email" id="email" placeholder="e.g. example@gmail.com" required>
+                    </div>
+
+                    <div class="form-item">
+                    <p>Address:</p>
+                        <input type="text" name="address" id="address" placeholder="e.g. Saint George Street, N2" required>
                     </div>
 
                     <div class="form-item">
@@ -150,7 +155,7 @@
 
 <br>
                 <div class="buttonsForm">
-                    <button class="signup" type="submit" >Sign Up</button>
+                    <button class="signup" type="submit" name="register_User">Sign Up</button>
 
                     <div class="options">
                     <br>
