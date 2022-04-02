@@ -8,7 +8,7 @@
     <script src="Script.js"></script>
 </head>
 
-<body onresize="mobMenuF()" onload="LoadProducts(); adjustFooter(3)">
+<body onresize="mobMenuF()" onload="adjustFooter(3)">
 <header class="bar">
 
     <img id="uclanlogo" src="uclan logo.png"   alt="uclan logo"/>
@@ -60,14 +60,24 @@ $query = "SELECT *
           FROM tbl_products;";
 $result = $connection -> query($query);
 
+$counter=0;
 
 
-
-    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC))    //fethces the array
+    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC))    //fetches the array
     {
-     echo "<img src='".$row["product_image"]."'style=\"border-radius: 70%; width:150px;\">";
-    // echo "<img src='".$row["product_image"]."'style=\"max-width: 10%;\">";
-
+        //puts the image on the page:
+        echo "<img src='".$row["product_image"]."'style=\"border-radius: 70%; width:150px;\">";
+        // echo "<img src='".$row["product_image"]."'style=\"max-width: 10%;\">";
+        //puts the product title on the page:
+        echo "<br>"."<p style=\"color: #F47721;font-weight: bolder;font-size: large;\">".$row["product_title"]."</p>";
+        //puts description on the page:
+        echo "<p style=\"font-size: small;padding-left: 45px; padding-right:45px;\">".$row["product_desc"]."<br><br>"."</p>";
+        //puts price on the page:
+        echo "£".$row["product_price"]."<br>";
+        //button for add to cart. when clicked Adds the details of the item to the local storage and then using GET its being presented in the cart
+        echo "<input type='button' style=\" display: inline-block;text-decoration: none; background-color: #006250; border: none; color: white;\" onclick='addToCart(".$row["product_id"].",\"".$row["product_title"]."\",\"".$row["product_desc"]."\",\"".$row["product_image"]."\",\"".$row["product_price"]."\",\"".$row["product_type"]."\")' value='Add to cart'/>";
+        echo "<br>";
+        $counter++;
     }
 
 
