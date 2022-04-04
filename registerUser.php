@@ -16,8 +16,8 @@
 
             <ul id="topElements">
                 <a href="index.php">Home</a>
-                <a href="products.html">Products</a>
-                <a href="cart.html">Cart</a>
+                <a href="products.php">Products</a>
+                <a href="cart.php">Cart</a>
                 <a href="signup.php">Sign Up</a>
 
             </ul>
@@ -26,9 +26,10 @@
 
             <div id="hamMenu" onclick="mobMenuChoices()"></div>
             <div id="hamMenuChoices">
-                <a href="index.html">Home</a>
-                <a href="products.html">Products</a>
-                <a href="cart.html">Cart</a>
+                <a href="index.php">Home</a>
+                <a href="products.php">Products</a>
+                <a href="cart.php">Cart</a>
+                <a href="signup.php">Sign Up</a>
             </div>
 
     </header>

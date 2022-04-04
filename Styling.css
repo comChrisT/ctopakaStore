@@ -244,7 +244,7 @@ body
     width:100px;
     height:100px;
     position:fixed;
-    bottom:250px;
+    top:250px;
     left:10px;
     border-radius: 50px;
     border-width: thick;
@@ -260,7 +260,7 @@ body
     width:100px;
     height:100px;
     position:fixed;
-    bottom:250px;
+    top:250px;
     left:30px;
     border-radius: 50px;
     font-weight: bold;
@@ -272,7 +272,7 @@ body
     width:100px;
     height:100px;
     position:fixed;
-    bottom:250px;
+    top:250px;
     right:30px;
     border-radius: 50px;
     font-weight: bold;

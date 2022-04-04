@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Products</title>
     <link rel="stylesheet" href="Styling.css">
+    <link rel="stylesheet" href="products.css">
     <script src="Script.js"></script>
 </head>
 
@@ -14,19 +15,22 @@
     <img id="uclanlogo" src="uclan logo.png"   alt="uclan logo"/>
 
     <ul id="topElements">
-        <a href="index.php">Home</a>
-        <a href="products.html">Products</a>
-        <a href="cart.html">Cart</a>
-    </ul>
+                <a href="index.php">Home</a>
+                <a href="products.php">Products</a>
+                <a href="cart.php">Cart</a>
+                <a href="signup.php">Sign Up</a>
 
-    <p id="heaedertitle">Student Shop</p>
+            </ul>
 
-    <div id="hamMenu" onclick="mobMenuChoices()"></div>
-    <div id="hamMenuChoices">
-        <a href="index.php">Home</a>
-        <a href="products.html">Products</a>
-        <a href="cart.html">Cart</a>
-    </div>
+            <p id="heaedertitle">Student Shop</p>
+
+            <div id="hamMenu" onclick="mobMenuChoices()"></div>
+            <div id="hamMenuChoices">
+                <a href="index.php">Home</a>
+                <a href="products.php">Products</a>
+                <a href="cart.php">Cart</a>
+                <a href="signup.php">Sign Up</a>
+            </div>
 
 </header>
 
@@ -62,23 +66,29 @@ $result = $connection -> query($query);
 
 $counter=0;
 
-
+echo "<div class=\"grid\">";
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC))    //fetches the array
     {
+        echo "<div class=\"container\">";
         //puts the image on the page:
-        echo "<img src='".$row["product_image"]."'style=\"border-radius: 70%; width:150px;\">";
+        echo "<img src='".$row["product_image"]."'style=\"border-radius: 70%; width:150px;\" alt='Product image'>";
         // echo "<img src='".$row["product_image"]."'style=\"max-width: 10%;\">";
         //puts the product title on the page:
         echo "<br>"."<p style=\"color: #F47721;font-weight: bolder;font-size: large;\">".$row["product_title"]."</p>";
         //puts description on the page:
-        echo "<p style=\"font-size: small;padding-left: 45px; padding-right:45px;\">".$row["product_desc"]."<br><br>"."</p>";
+        echo "<p style=\"font-size: small;\">".$row["product_desc"]."</p>";
+        //link for more details (item.php):
+        echo "<a href=\"item.php?id=" .$row["product_id"]."&title=".$row["product_title"]."&desc=".$row["product_desc"]."&img=".$row["product_image"]."&price=".$row["product_price"]."&type=".$row["product_type"]."\">More details</a>";
+        echo "<br>";
         //puts price on the page:
         echo "£".$row["product_price"]."<br>";
         //button for add to cart. when clicked Adds the details of the item to the local storage and then using GET its being presented in the cart
         echo "<input type='button' style=\" display: inline-block;text-decoration: none; background-color: #006250; border: none; color: white;\" onclick='addToCart(".$row["product_id"].",\"".$row["product_title"]."\",\"".$row["product_desc"]."\",\"".$row["product_image"]."\",\"".$row["product_price"]."\",\"".$row["product_type"]."\")' value='Add to cart'/>";
         echo "<br>";
+        echo "</div>";
         $counter++;
     }
+    echo "</div>";
 
 
 ?>

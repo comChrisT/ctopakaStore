@@ -117,7 +117,7 @@ function viewDetails(index){
     sessionStorage.select=JSON.stringify(clothes[index]);
     sessionStorage.selectindex=JSON.stringify(index);
 
-    window.location.href="item.html"; //takes him to the item page
+    window.location.href="item.php"; //takes him to the item page
 }
 
 //function to add item to cart using localstorage
@@ -163,7 +163,7 @@ function GoTop() {
     document.getElementById("uclanlogo").scrollIntoView({behavior: 'smooth'});
 }
 
-//to load the item in the item.html page
+//to load the item in the item.php page
 function loadItemPage(){
 
     let clothe = JSON.parse(sessionStorage.select);    //converts the text back to javascript object
@@ -183,8 +183,9 @@ function loadCartPage(){
         let count = 0;
         let storedClothes = JSON.parse(localStorage.cart);
         document.getElementById("CartDescr").innerHTML +="<p style=\"margin-top: 10px; text-align: center;\">Items added to your cart:</p>";
-        document.getElementById("CartDescr").innerHTML +="<p style=\"display: inline;margin-top: 10px; margin-left:-150px;margin-right: 90px;font-weight: bold;\">Item</p>";
+        document.getElementById("CartDescr").innerHTML +="<p style=\"display: inline;margin-top: 10px; margin-left:-40px;margin-right: 120px;font-weight: bold;\">Item</p>";
         document.getElementById("CartDescr").innerHTML +="<p style=\"display: inline;margin-top: 10px;margin-right: 90px;font-weight: bold;\">Product</p>";
+        document.getElementById("CartDescr").innerHTML +="<p style=\"display: inline;margin-top: 10px;margin-left:40px;font-weight: bold;\">Price</p>";
 
 
         //goes through all the items in the cart
@@ -195,6 +196,7 @@ function loadCartPage(){
                     document.getElementById("cartItem").innerHTML += "<p style='display: inline; margin-right: 90px; float:left;'><br>" +
                         "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+count+"</p>";
                     document.getElementById("cartItem").innerHTML += "<p style='display: inline;margin-right: 70px;float:left;'><br>" + clothe.title + "</p>";
+                    document.getElementById("cartItem").innerHTML += "<p style='display: inline;margin-right: 70px;float:left;'><br>" + clothe.price + "</p>";
                    // document.getElementById("cartItem").innerHTML += "<p style='display: inline;float:left;'><br>" + clothe.colour + "</p>";
                     document.getElementById("cartItem").innerHTML += "<input type='button' style=\" margin-top:35px;display: inline-block;text-decoration: none; background-color: #F47721; border: none; color: white;\" onclick='removeFromCart(" + count + ")' value='Remove from cart'/>";
                     document.getElementById("cartItem").innerHTML += "<p><br><br></p>";
@@ -258,7 +260,7 @@ function adjustFooter(name){
             document.getElementById("footer").style.marginTop="0px";            //for adjusting the margin for products.php
             break;
         case 4:
-            document.getElementById("footer").style.marginTop="290px";          //for adjusting the margin for item.html
+            document.getElementById("footer").style.marginTop="290px";          //for adjusting the margin for item.php
             break;
     }
 

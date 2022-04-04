@@ -1,0 +1,59 @@
+.grid {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 60em;
+    text-align: center;
+    border-style: solid;
+    background-color: #dadce5;
+}
+
+.grid img{
+
+    border-radius: 70%;
+    width:450px;
+}
+
+.grid p{
+
+    font-size: medium;
+
+}
+
+
+@media only screen and (max-width: 970px)
+{
+
+    .grid {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 30em;
+        text-align: center;
+        border-style: solid;
+        background-color: #dadce5;
+    }
+}
+
+@media only screen and (max-width: 500px)
+{
+
+    .grid {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 20em;
+        text-align: center;
+        border-style: solid;
+        background-color: #dadce5;
+    }
+
+    .grid img{
+
+        border-radius: 70%;
+        width:250px;
+    }
+}

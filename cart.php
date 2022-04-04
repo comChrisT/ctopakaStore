@@ -14,24 +14,26 @@
 
     <img id="uclanlogo" src="uclan logo.png"   alt="uclan logo"/>
 
-    <ul id="topElements">
-        <a href="index.php">Home</a>
-        <a href="products.php">Products</a>
-        <a href="cart.html">Cart</a>
-    </ul>
+   <ul id="topElements">
+                <a href="index.php">Home</a>
+                <a href="products.php">Products</a>
+                <a href="cart.php">Cart</a>
+                <a href="signup.php">Sign Up</a>
 
-    <p id="heaedertitle">Student Shop</p>
+            </ul>
 
-    <div id="hamMenu" onclick="mobMenuChoices()"></div>
-    <div id="hamMenuChoices">
-        <a href="index.php">Home</a>
-        <a href="products.php">Products</a>
-        <a href="cart.html">Cart</a>
-    </div>
+            <p id="heaedertitle">Student Shop</p>
+
+            <div id="hamMenu" onclick="mobMenuChoices()"></div>
+            <div id="hamMenuChoices">
+                <a href="index.php">Home</a>
+                <a href="products.php">Products</a>
+                <a href="cart.php">Cart</a>
+                <a href="signup.php">Sign Up</a>
+            </div>
 
 </header>
 <h1 id="cartTitle">Cart</h1>
-
 <div id="CartDescr"></div>
 <div id="cartItem"></div>
 
