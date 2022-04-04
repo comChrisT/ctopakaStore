@@ -35,11 +35,19 @@
 </header>
 
 <h1 id="productsTitle">Products</h1>
+
+<form action="products.php" method="get">
+<input placeholder="e.g. Purple Hoodie"type="text" name="product">
+<input value="Search" type="submit">
+</form>
+
+<br>
 <div id="NavProducts">
-<a>Go to: <br></a>
-<button onclick="goToTshirts()">t-shirts</button>
-<button onclick="goToHoodies()">hoodies</button>
-<button onclick="goToJumpers()">jumpers</button>
+<a>Show: </a>
+<button onclick="location.href='products.php';">All</button>
+<button onclick="location.href='products.php?product=Tshirt';">T-shirts</button>
+<button onclick="location.href='products.php?product=Hoodie';">Hoodies</button>
+<button onclick="location.href='products.php?product=Jumper';">Jumpers</button>
 </div>
 
 <div id="forProduct"></div>
@@ -60,35 +68,116 @@ if (mysqli_connect_errno())
 
 
 
-$query = "SELECT *
-          FROM tbl_products;";
-$result = $connection -> query($query);
+if (!$_GET) {           //case where user didnt search for anything
 
-$counter=0;
+    $query = "SELECT *
+              FROM tbl_products;";
+    $result = $connection -> query($query);
 
-echo "<div class=\"grid\">";
-    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC))    //fetches the array
-    {
-        echo "<div class=\"container\">";
-        //puts the image on the page:
-        echo "<img src='".$row["product_image"]."'style=\"border-radius: 70%; width:150px;\" alt='Product image'>";
-        // echo "<img src='".$row["product_image"]."'style=\"max-width: 10%;\">";
-        //puts the product title on the page:
-        echo "<br>"."<p style=\"color: #F47721;font-weight: bolder;font-size: large;\">".$row["product_title"]."</p>";
-        //puts description on the page:
-        echo "<p style=\"font-size: small;\">".$row["product_desc"]."</p>";
-        //link for more details (item.php):
-        echo "<a href=\"item.php?id=" .$row["product_id"]."&title=".$row["product_title"]."&desc=".$row["product_desc"]."&img=".$row["product_image"]."&price=".$row["product_price"]."&type=".$row["product_type"]."\">More details</a>";
-        echo "<br>";
-        //puts price on the page:
-        echo "£".$row["product_price"]."<br>";
-        //button for add to cart. when clicked Adds the details of the item to the local storage and then using GET its being presented in the cart
-        echo "<input type='button' style=\" display: inline-block;text-decoration: none; background-color: #006250; border: none; color: white;\" onclick='addToCart(".$row["product_id"].",\"".$row["product_title"]."\",\"".$row["product_desc"]."\",\"".$row["product_image"]."\",\"".$row["product_price"]."\",\"".$row["product_type"]."\")' value='Add to cart'/>";
-        echo "<br>";
+
+    echo "<div class=\"grid\">";
+        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC))    //fetches the array
+        {
+            echo "<div class=\"container\">";
+            //puts the image on the page:
+            echo "<img src='".$row["product_image"]."'style=\"border-radius: 70%; width:150px;\" alt='Product image'>";
+            // echo "<img src='".$row["product_image"]."'style=\"max-width: 10%;\">";
+            //puts the product title on the page:
+            echo "<br>"."<p style=\"color: #F47721;font-weight: bolder;font-size: large;\">".$row["product_title"]."</p>";
+            //puts description on the page:
+            echo "<p style=\"font-size: small;\">".$row["product_desc"]."</p>";
+            //link for more details (item.php):
+            echo "<a href=\"item.php?id=" .$row["product_id"]."&title=".$row["product_title"]."&desc=".$row["product_desc"]."&img=".$row["product_image"]."&price=".$row["product_price"]."&type=".$row["product_type"]."\">More details</a>";
+            echo "<br>";
+            //puts price on the page:
+            echo "£".$row["product_price"]."<br>";
+            //button for add to cart. when clicked Adds the details of the item to the local storage and then using GET its being presented in the cart
+            echo "<input type='button' style=\" display: inline-block;text-decoration: none; background-color: #006250; border: none; color: white;\" onclick='addToCart(".$row["product_id"].",\"".$row["product_title"]."\",\"".$row["product_desc"]."\",\"".$row["product_image"]."\",\"".$row["product_price"]."\",\"".$row["product_type"]."\")' value='Add to cart'/>";
+            echo "<br>";
+            echo "</div>";
+
+        }
         echo "</div>";
-        $counter++;
-    }
-    echo "</div>";
+}
+else if (!(preg_match("/[a-z]/i", $_GET["product"]))) {     //case where user searched with anything else than letters
+    $query = "SELECT *
+              FROM tbl_products;";
+    $result = $connection -> query($query);
+
+
+    echo "<div class=\"grid\">";
+        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC))    //fetches the array
+        {
+            echo "<div class=\"container\">";
+            //puts the image on the page:
+            echo "<img src='".$row["product_image"]."'style=\"border-radius: 70%; width:150px;\" alt='Product image'>";
+            // echo "<img src='".$row["product_image"]."'style=\"max-width: 10%;\">";
+            //puts the product title on the page:
+            echo "<br>"."<p style=\"color: #F47721;font-weight: bolder;font-size: large;\">".$row["product_title"]."</p>";
+            //puts description on the page:
+            echo "<p style=\"font-size: small;\">".$row["product_desc"]."</p>";
+            //link for more details (item.php):
+            echo "<a href=\"item.php?id=" .$row["product_id"]."&title=".$row["product_title"]."&desc=".$row["product_desc"]."&img=".$row["product_image"]."&price=".$row["product_price"]."&type=".$row["product_type"]."\">More details</a>";
+            echo "<br>";
+            //puts price on the page:
+            echo "£".$row["product_price"]."<br>";
+            //button for add to cart. when clicked Adds the details of the item to the local storage and then using GET its being presented in the cart
+            echo "<input type='button' style=\" display: inline-block;text-decoration: none; background-color: #006250; border: none; color: white;\" onclick='addToCart(".$row["product_id"].",\"".$row["product_title"]."\",\"".$row["product_desc"]."\",\"".$row["product_image"]."\",\"".$row["product_price"]."\",\"".$row["product_type"]."\")' value='Add to cart'/>";
+            echo "<br>";
+            echo "</div>";
+
+        }
+        echo "</div>";
+}
+else if ((preg_match("/[a-z]/i", $_GET["product"])))
+{
+
+$str = strtolower($_GET["product"]);
+$space = ' ';
+$allWords = explode($space, $str);
+
+$counter = 0;
+echo "<div class=\"grid\">";
+foreach ($allWords as $word) {
+    $testing=$_GET["product"];
+     $query = "SELECT * FROM tbl_products
+                WHERE lower(product_title) LIKE \"%".$word."%\"
+                   OR lower(product_title) LIKE \"%".$word."%\";";
+
+    $result = $connection -> query($query);
+
+
+
+            while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC))    //fetches the array
+            {
+                echo "<div class=\"container\">";
+                //puts the image on the page:
+                echo "<img src='".$row["product_image"]."'style=\"border-radius: 70%; width:150px;\" alt='Product image'>";
+                // echo "<img src='".$row["product_image"]."'style=\"max-width: 10%;\">";
+                //puts the product title on the page:
+                echo "<br>"."<p style=\"color: #F47721;font-weight: bolder;font-size: large;\">".$row["product_title"]."</p>";
+                //puts description on the page:
+                echo "<p style=\"font-size: small;\">".$row["product_desc"]."</p>";
+                //link for more details (item.php):
+                echo "<a href=\"item.php?id=" .$row["product_id"]."&title=".$row["product_title"]."&desc=".$row["product_desc"]."&img=".$row["product_image"]."&price=".$row["product_price"]."&type=".$row["product_type"]."\">More details</a>";
+                echo "<br>";
+                //puts price on the page:
+                echo "£".$row["product_price"]."<br>";
+                //button for add to cart. when clicked Adds the details of the item to the local storage and then using GET its being presented in the cart
+                echo "<input type='button' style=\" display: inline-block;text-decoration: none; background-color: #006250; border: none; color: white;\" onclick='addToCart(".$row["product_id"].",\"".$row["product_title"]."\",\"".$row["product_desc"]."\",\"".$row["product_image"]."\",\"".$row["product_price"]."\",\"".$row["product_type"]."\")' value='Add to cart'/>";
+                echo "<br>";
+                echo "</div>";
+                $counter ++;
+            }
+
+
+}
+
+echo "</div>";
+            if($counter==0)
+            echo "<p>".$counter." Results</p>";
+
+}
 
 
 ?>
