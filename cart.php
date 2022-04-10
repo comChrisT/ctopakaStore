@@ -36,7 +36,7 @@
 </header>
 <h1 id="cartTitle">Cart</h1>
 <div class="container">
-<p>Login to checkout:</p>
+<p>Login to be able to checkout:</p>
 <form method="post" action="cart.php">
   	<div class="form-login">
   		<label>Email:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
@@ -51,11 +51,11 @@
   		<button type="submit" name="login_user">Login</button>
   	</div>
   	<p>
-  		Do you want to sign up? <a href="register.php">Sign up</a>
+  		Do you want to sign up? <a href="signup.php">Sign up</a>
   	</p>
   </form>
 </div>
-<button id="checkout">Checkout</button>
+<button type="submit" name="checkout" value="A" id="checkout">Checkout</button>
  <?php
   // Start the session
   session_start();
