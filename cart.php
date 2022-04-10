@@ -55,7 +55,7 @@
   	</p>
   </form>
 </div>
-<button type="submit" name="checkout" value="A" id="checkout">Checkout</button>
+<button type="submit" id="checkout">Checkout</button>
  <?php
   // Start the session
   session_start();
