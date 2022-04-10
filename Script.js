@@ -211,6 +211,7 @@ function loadCartPage(){
                                  Available at: https://dribbble.com/shots/11302442-Oops-Your-cart-is-empty#
                                  [Accessed 12 December 2021].*/
         document.getElementById("cartItem").innerHTML += "<p style='font-weight: bold'> Go shopping! </p>";
+        document.getElementById("checkout").style.display='none';   //to hide the checkout button when the cart is empty
     }
 }
 

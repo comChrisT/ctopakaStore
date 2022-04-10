@@ -41,13 +41,12 @@ session_start();
 
 if (isset($_SESSION['loginEmail']))
     {
-        echo "<p style=\"margin-top: 10px; text-align: center;\">Hello <strong>".$_SESSION["loginName"]."</strong></p>";
-        echo "<script>document.querySelectorAll(\".container\").forEach(a=>a.style.display = \"none\");</script>";
         echo "<script>var signup = document.getElementById('signUpMenu');           //to change the signup button to log out
               signup.href = 'logout.php';signup.innerHTML = 'Logout';</script>";
         echo "<script>var signup = document.getElementById('signUpMenuHam');        //to change the signup button to log out on hamburger menu
                                     signup.href = 'logout.php';signup.innerHTML = 'Logout';</script>";
     }
+if((isset($_GET['img']))&&(isset($_GET['title']))&&(isset($_GET['desc']))&&(isset($_GET['price']))) {
 echo "<img src='".$_GET['img']."'alt='Product image'>";
 //puts the product title on the page:
 echo "<br>"."<p style=\"color: #F47721;font-weight: bolder;font-size: x-large;\">".$_GET["title"]."</p>";
@@ -58,6 +57,12 @@ echo "£".$_GET["price"]."<br>";
 //button for add to cart. when clicked Adds the details of the item to the local storage and then using GET its being presented in the cart
 echo "<input type='button' style=\" display: inline-block;text-decoration: none; background-color: #006250; border: none; color: white;\" onclick='addToCart(".$_GET["id"].",\"".$_GET["title"]."\",\"".$_GET["desc"]."\",\"".$_GET["img"]."\",\"".$_GET["price"]."\",\"".$_GET["type"]."\")' value='Add to cart'/>";
 echo "<br>";
+}
+else
+{
+echo "<script>alert('Variables from page are missing... Redirecting to products page');window.location.href = 'products.php';</script>";
+}
+
 ?>
 </div>
 <script src="Script.js"></script>

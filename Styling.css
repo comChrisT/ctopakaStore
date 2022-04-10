@@ -239,24 +239,23 @@ body
 }
 
 #goTopButton{
-    color: white ;
-    background-color:#34516C;
+    color: #000000;
+    background-color: transparent;
     width:100px;
     height:100px;
     position:fixed;
-    top:250px;
+    top:150px;
     left:10px;
+    border: 10px solid rgba(0, 0, 0, 0.3);
     border-radius: 50px;
-    border-width: thick;
-    border: #BE1622;
     font-weight: bold;
     font-size: large;
 
 }
 
 #goBackButton{
-    color: white ;
-    background-color:#BE1622 ;
+    color: #000000;
+    border: 10px solid rgba(0, 0, 0, 0.3);
     width:100px;
     height:100px;
     position:fixed;
@@ -267,8 +266,8 @@ body
     font-size: large;
 }
 #emptyCart{
-    color: white ;
-    background-color:#34516C;
+    color: #000000;
+    border: 10px solid rgb(189, 42, 42);
     width:100px;
     height:100px;
     position:fixed;

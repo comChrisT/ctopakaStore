@@ -60,8 +60,6 @@ $dbname = "ctopaka";
 
 if (isset($_SESSION['loginEmail']))
     {
-        echo "<p style=\"margin-top: 10px; text-align: center;\">Hello <strong>".$_SESSION["loginName"]."</strong></p>";
-        echo "<script>document.querySelectorAll(\".container\").forEach(a=>a.style.display = \"none\");</script>";
         echo "<script>var signup = document.getElementById('signUpMenu');           //to change the signup button to log out
               signup.href = 'logout.php';signup.innerHTML = 'Logout';</script>";
         echo "<script>var signup = document.getElementById('signUpMenuHam');        //to change the signup button to log out on hamburger menu
