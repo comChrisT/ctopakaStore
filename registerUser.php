@@ -3,43 +3,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
     <meta charset="UTF-8">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="Styling.css">
+    <title>Registering...</title>
     <script src="Script.js"></script>
     <meta http-equiv="refresh" content="5; url=index.php" />        <!--To redirect the user-->
 </head>
 
-<body onresize="mobMenuF()" onload="adjustFooter(1)">
-    <header class="bar">
+<body>
 
-            <img id="uclanlogo" src="uclan logo.png"   alt="uclan logo"/>
-
-            <ul id="topElements">
-                <a href="index.php">Home</a>
-                <a href="products.php">Products</a>
-                <a href="cart.php">Cart</a>
-                <a href="signup.php">Sign Up</a>
-
-            </ul>
-
-            <p id="heaedertitle">Student Shop</p>
-
-            <div id="hamMenu" onclick="mobMenuChoices()"></div>
-            <div id="hamMenuChoices">
-                <a href="index.php">Home</a>
-                <a href="products.php">Products</a>
-                <a href="cart.php">Cart</a>
-                <a href="signup.php">Sign Up</a>
-            </div>
 
     </header>
 <?php
-
+// Start the session
+session_start();
   $servername = "localhost";
   $username = "ctopaka";
   $password = "ChrisPH1217";
   $dbname = "ctopaka";
 
+if (isset($_SESSION['loginEmail']))
+    {
+        echo "<p style=\"margin-top: 10px; text-align: center;\">Hello <strong>".$_SESSION["loginName"]."</strong></p>";
+        echo "<script>document.querySelectorAll(\".container\").forEach(a=>a.style.display = \"none\");</script>";
+        echo "<script>var signup = document.getElementById('signUpMenu');           //to change the signup button to log out
+              signup.href = 'logout.php';signup.innerHTML = 'Logout';</script>";
+        echo "<script>var signup = document.getElementById('signUpMenuHam');        //to change the signup button to log out on hamburger menu
+                                    signup.href = 'logout.php';signup.innerHTML = 'Logout';</script>";
+    }
   // Create connection
   $connection = new mysqli($servername, $username, $password, $dbname);
   if (mysqli_connect_errno())   //check for errors
@@ -55,13 +44,20 @@
 
         if(($fullName!="")&&($email!="")&&($passwordBefore!="")&&($address!=""))        //if the user visits the registerUser.php randomly, they won't be registered in the database
         {
+            $query = "SELECT * FROM tbl_users WHERE user_email='$email'";
+            $result = $connection -> query($query);
+
+            if ((mysqli_num_rows($result) == 0))    //checks if the the meail already exists in the database
+            {
             $passwordAfter = password_hash($passwordBefore, PASSWORD_DEFAULT);   //encrypting the password using bcrypt
         	$query = "INSERT INTO tbl_users (user_full_name, user_email, user_pass, user_address)
         			  VALUES('$fullName', '$email', '$passwordAfter', '$address')";
         	mysqli_query($connection, $query);  //sending the query to the database
         	echo "<h1>Signup Successful</h1>";
+        	}
+        	else{echo "User with this email already exists! <br>Try Logging in!";}
         }
-        else {echo "<h1>Oops! You ended up in the wrong page. Let me redirect you!</h1>"}
+        else {echo "<h1>Oops! You ended up in the wrong page. Let me redirect you!</h1>";}
 
 ?>
     <p>If you are not redirected in five seconds, <a href="index.php">click here</a>.</p>

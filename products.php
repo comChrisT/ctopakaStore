@@ -15,22 +15,21 @@
     <img id="uclanlogo" src="uclan logo.png"   alt="uclan logo"/>
 
     <ul id="topElements">
-                <a href="index.php">Home</a>
-                <a href="products.php">Products</a>
-                <a href="cart.php">Cart</a>
-                <a href="signup.php">Sign Up</a>
+       <a href="index.php">Home</a>
+       <a href="products.php">Products</a>
+       <a href="cart.php">Cart</a>
+       <a id="signUpMenu" href="signup.php">Sign Up</a>
 
-            </ul>
+   </ul>
 
-            <p id="heaedertitle">Student Shop</p>
-
-            <div id="hamMenu" onclick="mobMenuChoices()"></div>
-            <div id="hamMenuChoices">
-                <a href="index.php">Home</a>
-                <a href="products.php">Products</a>
-                <a href="cart.php">Cart</a>
-                <a href="signup.php">Sign Up</a>
-            </div>
+   <p id="heaedertitle">Student Shop</p>
+   <div id="hamMenu" onclick="mobMenuChoices()"></div>
+   <div id="hamMenuChoices">
+       <a href="index.php">Home</a>
+       <a href="products.php">Products</a>
+       <a href="cart.php">Cart</a>
+       <a id="signUpMenuHam" class="signUpMenu" href="signup.php">Sign Up</a>
+   </div>
 
 </header>
 
@@ -52,11 +51,22 @@
 
 <div id="forProduct"></div>
 <?php
-
+// Start the session
+session_start();
 $servername = "localhost";
 $username = "ctopaka";
 $password = "ChrisPH1217";
 $dbname = "ctopaka";
+
+if (isset($_SESSION['loginEmail']))
+    {
+        echo "<p style=\"margin-top: 10px; text-align: center;\">Hello <strong>".$_SESSION["loginName"]."</strong></p>";
+        echo "<script>document.querySelectorAll(\".container\").forEach(a=>a.style.display = \"none\");</script>";
+        echo "<script>var signup = document.getElementById('signUpMenu');           //to change the signup button to log out
+              signup.href = 'logout.php';signup.innerHTML = 'Logout';</script>";
+        echo "<script>var signup = document.getElementById('signUpMenuHam');        //to change the signup button to log out on hamburger menu
+                                    signup.href = 'logout.php';signup.innerHTML = 'Logout';</script>";
+    }
 
 // Create connection
 $connection = new mysqli($servername, $username, $password, $dbname);

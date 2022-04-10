@@ -15,21 +15,21 @@
 
             <img id="uclanlogo" src="uclan logo.png"   alt="uclan logo"/>
 
-            <ul id="topElements">
+             <ul id="topElements">
                 <a href="index.php">Home</a>
                 <a href="products.php">Products</a>
                 <a href="cart.php">Cart</a>
-                <a href="signup.php">Sign Up</a>
+                <a id="signUpMenu" href="signup.php">Sign Up</a>
 
             </ul>
 
             <p id="heaedertitle">Student Shop</p>
-
             <div id="hamMenu" onclick="mobMenuChoices()"></div>
             <div id="hamMenuChoices">
-                <a href="index.html">Home</a>
-                <a href="products.html">Products</a>
-                <a href="cart.html">Cart</a>
+                <a href="index.php">Home</a>
+                <a href="products.php">Products</a>
+                <a href="cart.php">Cart</a>
+                <a id="signUpMenuHam" class="signUpMenu" href="signup.php">Sign Up</a>
             </div>
 
     </header>
@@ -86,7 +86,19 @@
 
 
     </html>
-
+<?php
+// Start the session
+session_start();
+if (isset($_SESSION['loginEmail']))
+    {
+        echo "<p style=\"margin-top: 10px; text-align: center;\">Hello <strong>".$_SESSION["loginName"]."</strong></p>";
+        echo "<script>document.querySelectorAll(\".container\").forEach(a=>a.style.display = \"none\");</script>";
+        echo "<script>var signup = document.getElementById('signUpMenu');           //to change the signup button to log out
+              signup.href = 'logout.php';signup.innerHTML = 'Logout';</script>";
+        echo "<script>var signup = document.getElementById('signUpMenuHam');        //to change the signup button to log out on hamburger menu
+                                    signup.href = 'logout.php';signup.innerHTML = 'Logout';</script>";
+    }
+?>
 <script>
     var userInput = document.getElementById("password1");
     var letters = document.getElementById("letters");

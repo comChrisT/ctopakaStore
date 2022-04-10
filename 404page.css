@@ -24,7 +24,7 @@ body p{
 body button{
     padding: 25px 50px 25px 50px;
     color: ghostwhite;
-    background-color: #8fcc88;
+    background-color: #330f0f;
     border-radius: 10px;
     cursor: pointer;
     font-size: 25px;
@@ -37,7 +37,7 @@ body button{
 
 body button:hover{
     box-shadow: 0 0 22px 7px ;
-    background-color: #000428;
+    background-color: #dc9191;
 }
 
 body h1{

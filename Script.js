@@ -206,7 +206,7 @@ function loadCartPage(){
     }
     else {
         //shows a message if the cart is empty
-        document.getElementById("cartItem").innerHTML += "<img src=\"emptyCart.png\" alt='Oops! Your cart is empty! Image' style='text-align: center; width: 90%' >";
+        document.getElementById("cartItem").innerHTML += "<img src=\"emptyCart.png\" alt='Oops! Your cart is empty! Image' style='text-align: center; width: 90%;' >";
         /*Reference for picture: Reddy, K. (n.d), Oops! Your cart is empty!. [Online]
                                  Available at: https://dribbble.com/shots/11302442-Oops-Your-cart-is-empty#
                                  [Accessed 12 December 2021].*/
@@ -219,6 +219,7 @@ function emptyCart(){
     if ("cart" in localStorage) {
         localStorage.removeItem('cart');
         alert("Your cart is now empty")
+        location.reload();          //to reload the page and show the cart empty
         location.reload();          //to reload the page and show the cart empty
     }
     else
