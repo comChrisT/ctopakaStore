@@ -14,28 +14,19 @@
     </header>
 <?php
 // Start the session
-session_start();
+  session_start();
   $servername = "localhost";
   $username = "ctopaka";
   $password = "ChrisPH1217";
   $dbname = "ctopaka";
 
-if (isset($_SESSION['loginEmail']))
-    {
-        echo "<p style=\"margin-top: 10px; text-align: center;\">Hello <strong>".$_SESSION["loginName"]."</strong></p>";
-        echo "<script>document.querySelectorAll(\".container\").forEach(a=>a.style.display = \"none\");</script>";
-        echo "<script>var signup = document.getElementById('signUpMenu');           //to change the signup button to log out
-              signup.href = 'logout.php';signup.innerHTML = 'Logout';</script>";
-        echo "<script>var signup = document.getElementById('signUpMenuHam');        //to change the signup button to log out on hamburger menu
-                                    signup.href = 'logout.php';signup.innerHTML = 'Logout';</script>";
-    }
   // Create connection
   $connection = new mysqli($servername, $username, $password, $dbname);
   if (mysqli_connect_errno())   //check for errors
   {
       echo "ERROR: could not connect to database to retrieve offers" . mysqli_connect_error();
       echo "<br>";
-   }
+  }
 
       $fullName = mysqli_real_escape_string($connection, $_POST['fullName']);           //retrieving the full name from the form using post
       $email = mysqli_real_escape_string($connection, $_POST['email']);                 //retrieving the email from the form using post
@@ -47,7 +38,7 @@ if (isset($_SESSION['loginEmail']))
             $query = "SELECT * FROM tbl_users WHERE user_email='$email'";
             $result = $connection -> query($query);
 
-            if ((mysqli_num_rows($result) == 0))    //checks if the the meail already exists in the database
+            if ((mysqli_num_rows($result) == 0))    //checks if the the email already exists in the database
             {
             $passwordAfter = password_hash($passwordBefore, PASSWORD_DEFAULT);   //encrypting the password using bcrypt
         	$query = "INSERT INTO tbl_users (user_full_name, user_email, user_pass, user_address)

@@ -112,6 +112,7 @@
                   $_SESSION["loginEmail"] = $email;
                   $_SESSION["loginPassword"] = $password;
                   $_SESSION["loginName"] = $row["user_full_name"];
+                  $_SESSION["loginId"] = $row["user_id"];
 
                           echo "<p style=\"margin-top: 10px; text-align: center;\">Hello <strong>".$_SESSION["loginName"]."</strong></p>";
                           echo "<script>document.querySelectorAll(\".container\").forEach(a=>a.style.display = \"none\");</script>";
