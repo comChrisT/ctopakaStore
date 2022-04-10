@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Registering...</title>
     <script src="Script.js"></script>
-    <meta http-equiv="refresh" content="5; url=index.php" />        <!--To redirect the user-->
+    <meta http-equiv="refresh" content="6; url=index.php" />        <!--To redirect the user-->
 </head>
 
 <body>
@@ -51,7 +51,7 @@
         else {echo "<h1>Oops! You ended up in the wrong page. Let me redirect you!</h1>";}
 
 ?>
-    <p>If you are not redirected in five seconds, <a href="index.php">click here</a>.</p>
+    <p>If you are not redirected in six seconds, <a href="index.php">click here</a>.</p>
 </body>
     </html>
 
