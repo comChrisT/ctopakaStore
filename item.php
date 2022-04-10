@@ -34,7 +34,7 @@
 
 </header>
 
-<div class="grid">
+
 <?php
 // Start the session
 session_start();
@@ -46,6 +46,7 @@ if (isset($_SESSION['loginEmail']))
         echo "<script>var signup = document.getElementById('signUpMenuHam');        //to change the signup button to log out on hamburger menu
                                     signup.href = 'logout.php';signup.innerHTML = 'Logout';</script>";
     }
+echo "<div class='grid'>";
 if((isset($_GET['img']))&&(isset($_GET['title']))&&(isset($_GET['desc']))&&(isset($_GET['price']))) {
 echo "<img src='".$_GET['img']."'alt='Product image'>";
 //puts the product title on the page:
@@ -62,9 +63,9 @@ else
 {
 echo "<script>alert('Variables from page are missing... Redirecting to products page');window.location.href = 'products.php';</script>";
 }
-
+echo "</div>";
 ?>
-</div>
+
 <script src="Script.js"></script>
 <button id="goBackButton" onclick="history.back()">← <br>Back</button>
 
