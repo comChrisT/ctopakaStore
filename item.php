@@ -73,7 +73,7 @@
         echo "<script>alert('Variables from page are missing... Redirecting to products page');window.location.href = 'products.php';</script>";
     }
     echo "</div>";
-    $query = "SELECT * FROM tbl_reviews ";
+    $query = "SELECT * FROM tbl_reviews WHERE product_id='".$_GET["id"]."';";
     $result = $connection -> query($query);
 
     $totalRating=0;

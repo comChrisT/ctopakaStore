@@ -111,14 +111,7 @@ function mobMenuChoices()
 }
 
 
-//function to view details based on sessionStorage
-function viewDetails(index){
-    //JSON converts an object to string.
-    sessionStorage.select=JSON.stringify(clothes[index]);
-    sessionStorage.selectindex=JSON.stringify(index);
 
-    window.location.href="item.php"; //takes him to the item page
-}
 
 //function to add item to cart using localstorage
 function addToCart(id,title,desc,image,price,type){
@@ -163,18 +156,6 @@ function GoTop() {
     document.getElementById("uclanlogo").scrollIntoView({behavior: 'smooth'});
 }
 
-//to load the item in the item.php page
-function loadItemPage(){
-
-    let clothe = JSON.parse(sessionStorage.select);    //converts the text back to javascript object
-    let clotheIndex = Number(JSON.parse(sessionStorage.selectindex));
-
-    document.getElementById("product").innerHTML +="<img src=\""+clothe.imagePath+"\""+" alt='Product image' style=\"border-radius: 70%;\" width="+"\""+"400px"+"\""+"><br>";
-    document.getElementById("product").innerHTML +="<br/>"+ "<p style=\"color: #F2BE1A;font-weight: bolder;font-size: large;\">"+clothe.type+"-"+clothe.colour + "</p>";
-    document.getElementById("product").innerHTML +="<p style=\"font-size: small; padding-left: 180px; padding-right:180px;\">"+clothe.description + "<br><br>"+"</p>"+clothe.price+"<br></div>";
-    document.getElementById("product").innerHTML +="<input type='button' style=\" display: inline-block;text-decoration: none; background-color: #F47721; border: none; color: white;\" onclick='addToCart(" + clotheIndex + ")' value='Add to cart'/>";
-
-}
 
 //Function to load the cart in cart.php
 function loadCartPage(){
@@ -230,24 +211,7 @@ function emptyCart(){
 }
 
 
-//takes the user to the first tshirt
-function goToTshirts(){
-    window.find("Tshirt");
-    window.getSelection().empty();
-}
 
-//takes the user to the first hoddie
-function goToHoodies(){
-
-    window.find("Hoodie");
-    window.getSelection().empty();
-}
-
-//takes the user to the first jumper
-function goToJumpers(){
-    window.find("cotton authentic character and practicality are combined in this winter jumper");
-    window.getSelection().empty();
-}
 
 //adjusts the footer top margin based on which page you are
 function adjustFooter(name){
